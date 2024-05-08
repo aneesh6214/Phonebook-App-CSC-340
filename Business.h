@@ -17,7 +17,7 @@ public:
     // Overridden display method (to make concrete)
     void display() const override;
 
-    string getAddress() const;
+    string getAddress() const; //Commit Test
     string getWebsite() const;
 
     void setAddress(string newAddress);
