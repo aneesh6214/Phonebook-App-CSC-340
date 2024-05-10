@@ -11,7 +11,7 @@ private:
 
 public:
     LinkedList() : head(nullptr) {}
-    ~LinkedList();
+    //~LinkedList();
 
     void insert(User *user);
     Node *linearSearch(string name) const;

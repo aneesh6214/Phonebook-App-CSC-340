@@ -12,6 +12,7 @@ private:
 public:
     PhoneBook() {}
 
+    void runMenu();
     void addUser(User *user);
     User *findUserByName(string name);
     void removeUserByName(string name);

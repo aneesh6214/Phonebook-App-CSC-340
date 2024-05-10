@@ -9,7 +9,6 @@ class Person : public User
 {
 private:
     string birthday;
-    string homePhoneNumber;
 
 public:
     Person(string name, string phoneNumber, string birthday);
@@ -18,10 +17,8 @@ public:
     void display() const override;
 
     string getBirthday() const;
-    string getHomePhoneNumber() const;
 
     void setBirthday(string newBirthday);
-    void setHomePhoneNumber(string newHomePhoneNumber);
 };
 
 #endif
