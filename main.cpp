@@ -4,6 +4,9 @@
 
 int main() {
     PhoneBook myPhoneBook;
+    cout << "===============================================" << endl;
+    cout << " === Welcome to the phonebook application! === " << endl;
+    cout << "===============================================" << endl;
     myPhoneBook.runMenu();
     //testBusiness();
     //testPerson();
