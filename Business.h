@@ -5,8 +5,7 @@
 #include <string>
 using namespace std;
 
-class Business : public User
-{
+class Business : public User {
 private:
     string address;
 
@@ -16,9 +15,9 @@ public:
     // Overridden display method (to make concrete)
     void display() const override;
 
-    string getAddress() const; //Commit Test
+    string getAddress() const { return address; };
 
-    void setAddress(string newAddress);
+    void setAddress(string newAddress) { address = newAddress; };
 };
 
 #endif

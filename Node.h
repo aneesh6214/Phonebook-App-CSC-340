@@ -4,14 +4,23 @@
 #include "User.h"
 using namespace std;
 
-class Node
-{
-public:
+class Node {
+private:
     User *user;
     Node *next;
+    Node *prev;
 
-    Node(User *data) : user(data), next(nullptr) {}
-    Node(User *data, Node *nextUser) : user(data), next(nextUser) {}
+public:
+    Node(User *data, Node *nextNode = nullptr, Node *prevNode = nullptr)
+        : user(data), next(nextNode), prev(prevNode) {
+    }
+
+    User *getUser() const { return user; }
+    Node *getNext() const { return next; }
+    Node *getPrev() const { return prev; }
+
+    void setUser(User *newUser) { user = newUser; }
+    void setNext(Node *newNext) { next = newNext; }
+    void setPrev(Node *newPrev) { prev = newPrev; }
 };
-
 #endif

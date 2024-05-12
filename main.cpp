@@ -1,11 +1,12 @@
 #include "PhoneBook.h"
 #include "TestBusinessAndPerson.h"
+#include "TestLinkedList.h"
 
-int main()
-{
+int main() {
     PhoneBook myPhoneBook;
     //myPhoneBook.runMenu();
-    testBusiness();
-    testPerson();
+    //testBusiness();
+    //testPerson();
+    runLinkedListTests();
     return 0;
 }
