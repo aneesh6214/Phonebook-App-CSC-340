@@ -18,6 +18,9 @@ void runLinkedListTests() {
 
     cout << "=== sort() Test ===" << endl;
     runSortTest();
+
+    cout << "=== loadFromFile() Test ===" << endl;
+    runLoadFromFileTest();
 }
 
 void push_backTest() {
@@ -47,7 +50,7 @@ void runLinearSearchTest() {
 
     // Search for a person
     cout << "Searching for John Doe" << endl;
-    Node *personResult = list.linearSearch("John Doe");
+    Node *personResult = list.linearSearchName("John Doe");
     if (personResult != nullptr) {
         cout << "Person found: ";
         personResult->getUser()->display();
@@ -57,7 +60,7 @@ void runLinearSearchTest() {
 
     // Search for a business
     cout << "Searching for Doe Enterprises" << endl;
-    Node *businessResult = list.linearSearch("Doe Enterprises");
+    Node *businessResult = list.linearSearchName("Doe Enterprises");
     if (businessResult != nullptr) {
         cout << "Business found: ";
         businessResult->getUser()->display();
@@ -88,4 +91,21 @@ void runSortTest() {
     cout << "\nList after sorting:" << endl;
     list.display();
 }
+
+void runLoadFromFileTest() {
+    LinkedList list;
+    cout << "Loading data from file..." << endl;
+    list.loadFromFile("C:/Users/anees/Desktop/Phonebook CSC 340/Phonebook-App-CSC-340/data.txt");
+
+    cout << "List after loading from file:" << endl;
+    list.display();
+
+    while (list.getHead()) {
+        Node *toDelete = list.getHead();
+        list.setHead(list.getHead()->getNext());
+        delete toDelete->getUser();
+        delete toDelete;
+    }
+}
+
 

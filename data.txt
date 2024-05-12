@@ -1,0 +1,30 @@
+Person,John Doe,555-1234,1990-01-01
+Business,Alpha Enterprises,555-5678,100 Alpha St
+Person,Jane Smith,555-2345,1992-02-02
+Business,Beta LLC,555-6789,200 Beta Lane
+Person,Alice Johnson,555-3456,1993-03-03
+Business,Gamma Corp,555-7890,300 Gamma Blvd
+Person,Bob Brown,555-4567,1994-04-04
+Business,Delta Inc,555-8901,400 Delta Road
+Person,Carol White,555-5678,1995-05-05
+Business,Epsilon Ltd,555-9012,500 Epsilon Park
+Person,David Green,555-6789,1996-06-06
+Business,Zeta Gmbh,555-0123,600 Zeta Gardens
+Person,Eve Black,555-7890,1997-07-07
+Business,Eta S.A.,555-1234,700 Eta Place
+Person,Frank Castle,555-8901,1998-08-08
+Business,Theta Pty,555-2345,800 Theta Station
+Person,Grace Hall,555-3456,1999-09-09
+Business,Iota Firm,555-4567,900 Iota Complex
+Person,Henry Ford,555-5678,2000-10-10
+Business,Kappa Group,555-6789,1000 Kappa Blvd
+Person,Irene Adler,555-7890,2001-11-11
+Business,Lambda Inc,555-8901,1100 Lambda Line
+Person,Jack Ripper,555-9012,2002-12-12
+Business,Mu Services,555-0123,1200 Mu Mews
+Person,Kate Bishop,555-1234,2003-01-13
+Business,Nu Networks,555-2345,1300 Nu Nook
+Person,Luke Cage,555-3456,2004-02-14
+Business,Xi Exports,555-4567,1400 Xi Xing
+Person,Mary Watson,555-5678,2005-03-15
+Business,Omicron Oil,555-6789,1500 Omicron Outpost

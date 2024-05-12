@@ -9,4 +9,6 @@ void push_backTest();
 
 void runSortTest();
 
+void runLoadFromFileTest();
+
 #endif

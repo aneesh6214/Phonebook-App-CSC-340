@@ -1,4 +1,10 @@
 #include "LinkedList.h"
+#include "Business.h"
+#include "Person.h"
+#include "Phonebook.h"
+#include <fstream>
+#include <sstream>
+
 using namespace std;
 
 void LinkedList::swapNodes(Node *first, Node *second) {
@@ -37,10 +43,21 @@ void LinkedList::display() const {
     }
 }
 
-Node *LinkedList::linearSearch(const string &name) const {
+Node *LinkedList::linearSearchName(const string &name) const {
     Node *current = head;
     while (current != nullptr) {
         if (current->getUser()->getName() == name) {
+            return current;
+        }
+        current = current->getNext();
+    }
+    return nullptr;
+}
+
+Node *LinkedList::linearSearchPhone(const string &phoneNumber) const {
+    Node *current = head;
+    while (current != nullptr) {
+        if (current->getUser()->getPhoneNumber() == phoneNumber) {
             return current;
         }
         current = current->getNext();
@@ -64,4 +81,58 @@ void LinkedList::sort() {
             current = next;
         }
     } while (swapped);
+}
+
+void LinkedList::loadFromFile(const string &filename) {
+    ifstream file(filename);
+    if (!file.is_open()) {
+        cout << "Failed to open file: " << filename << endl;
+        return;
+    }
+
+    string line;
+    while (getline(file, line)) {
+        stringstream ss(line);
+        string type, name, phone, extra;
+        getline(ss, type, ',');
+        getline(ss, name, ',');
+        getline(ss, phone, ',');
+        getline(ss, extra);
+
+        if (type == "Person") {
+            User *person = new Person(name, phone, extra);
+            this->push_back(person);
+        } else if (type == "Business") {
+            User *business = new Business(name, phone, extra);
+            this->push_back(business);
+        }
+    }
+
+    file.close();
+    cout << "Phonebook loaded from " << filename << endl;
+}
+
+void LinkedList::removeByName(const string &name) {
+    Node *toRemove = linearSearchName(name);
+    if (toRemove == nullptr) {
+        cout << "No entry found with the name: " << name << endl;
+        return;
+    }
+
+    if (toRemove->getPrev() != nullptr) {
+        toRemove->getPrev()->setNext(toRemove->getNext());
+    } else {
+        head = toRemove->getNext();
+    }
+
+    if (toRemove->getNext() != nullptr) {
+        toRemove->getNext()->setPrev(toRemove->getPrev());
+    } else {
+        tail = toRemove->getPrev();
+    }
+
+    delete toRemove->getUser();
+    delete toRemove;
+    size--;
+    cout << "Entry removed: " << name << endl;
 }

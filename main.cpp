@@ -4,9 +4,9 @@
 
 int main() {
     PhoneBook myPhoneBook;
-    //myPhoneBook.runMenu();
+    myPhoneBook.runMenu();
     //testBusiness();
     //testPerson();
-    runLinkedListTests();
+    //runLinkedListTests();
     return 0;
 }

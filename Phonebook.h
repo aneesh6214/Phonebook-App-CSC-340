@@ -4,19 +4,21 @@
 #include "LinkedList.h"
 using namespace std;
 
-class PhoneBook
-{
+class PhoneBook {
 private:
     LinkedList users;
 
 public:
-    PhoneBook() {}
+    PhoneBook() {
+    }
 
     void runMenu();
+
     void addUser(User *user);
-    User *findUserByName(string name);
-    void removeUserByName(string name);
-    void sortUsersByName();
+
+    //User *findUserByName(string name);
+    //void removeUserByName(string name);
+    //void sortUsersByName();
 };
 
 #endif

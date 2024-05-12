@@ -23,11 +23,15 @@ public:
 
     void push_back(Node *node);
 
+    void removeByName(const string &name);
+
     void display() const;
 
-    Node *linearSearch(const string &name) const;
+    Node *linearSearchName(const string &name) const;
 
-    //Node *binarySearch(User *user) const;
+    Node *linearSearchPhone(const string &phoneNumber) const;
+
+    void loadFromFile(const string &filename);
 
     void sort();
 
